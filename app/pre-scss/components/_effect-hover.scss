@@ -1,0 +1,217 @@
+@import "../helpers/_mixins.scss";
+
+.item-ef-scale {
+    .img {
+        position: relative;
+
+        img {
+            @include transition(0.4s ease);
+        }
+
+        .roll {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            @include transition(0.3s ease-in-out);
+            @include opacity(0);
+            visibility: hidden;
+            top: 0;
+            left: 0;
+            background-position: center center;
+            background-repeat: no-repeat;
+            font: normal normal normal 14px/1 FontAwesome;
+
+            &:before {
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                border: 1px solid #ed161d;
+                text-align: center;
+                line-height: 35px;
+                display: block;
+                position: absolute;
+                margin: -20px 0 0 -20px;
+                @include scale(0);
+                @include transition(0.4s ease-in-out);
+                font-size: 18px;
+                
+            }
+
+            &.tie-news:before {
+                content: '\f15c';
+            }
+
+            &.tie-video:before {
+                content: '\f16a';
+            }
+
+            &.tie-picture:before {
+                content: '\f083';
+            }
+
+            &.tie-eye:before {
+                content: '\f06e ';
+            }
+        }
+
+        a:hover {
+            
+        }
+    }
+
+    &:hover {
+        .img img {
+            @include scale(1.3);
+            @include transition(0.4s ease);
+        }
+
+        .roll {
+            @include opacity(1);
+            visibility: visible;
+            @include transition(0.3s ease-in-out);
+
+
+            &:before {
+                @include scale(1);
+                @include transition(0.4s ease-in-out);
+            }
+        }
+    }
+}
+
+.item-ef {
+    .img {
+        position: relative;
+
+        .roll {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            @include transition(0.3s ease-in-out);
+            @include opacity(0);
+            visibility: hidden;
+            top: 0;
+            left: 0;
+            background-position: center center;
+            background-repeat: no-repeat;
+            font: normal normal normal 14px/1 FontAwesome;
+
+            &:before {
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                border: 3px solid #fff;
+                border-radius: 100%;
+                top: 50%;
+                left: 50%;
+                text-align: center;
+                line-height: 35px;
+                display: block;
+                position: absolute;
+                margin: -20px 0 0 -20px;
+                @include scale(0);
+                @include transition(0.4s ease-in-out);
+                font-size: 18px;
+            }
+
+            &.tie-news:before {
+                content: '\f15c';
+            }
+
+            &.tie-video:before {
+                content: '\f16a';
+            }
+
+            &.tie-picture:before {
+                content: '\f083';
+            }
+
+            &.tie-eye:before {
+                content: '\f06e ';
+            }
+        }
+
+        a {
+        }
+    }
+
+    &:hover .roll {
+        @include opacity(1);
+        visibility: visible;
+        @include transition(0.3s ease-in-out);
+
+        &:before {
+            @include scale(1);
+            @include transition(0.4s ease-in-out);
+        }
+    }
+}
+
+.item-media-ef {
+    .img {
+        position: relative;
+
+        .roll {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4);
+            @include transition(0.3s ease-in-out);
+            @include opacity(0.8);
+            visibility: visible;
+            top: 0;
+            left: 0;
+            background-position: center center;
+            background-repeat: no-repeat;
+            font: normal normal normal 14px/1 FontAwesome;
+
+            &:before {
+                color: #fff;
+                width: 46px;
+                height: 46px;
+                border: 3px solid #fff;
+                border-radius: 100%;
+                top: 50%;
+                left: 50%;
+                text-align: center;
+                line-height: 41px;
+                display: block;
+                position: absolute;
+                margin: -23px 0 0 -23px;
+                @include scale(1);
+                @include transition(0.4s ease-in-out);
+                font-size: 22px;
+            }
+
+            &.tie-news:before {
+                content: '\f15c';
+            }
+
+            &.tie-video:before {
+                content: '\f16a';
+            }
+
+            &.tie-picture:before {
+                content: '\f083';
+            }
+
+            &.tie-eye:before {
+                content: '\f06e ';
+            }
+        }
+    }
+
+    &:hover .roll {
+        @include opacity(1);
+        visibility: visible;
+        background-color: rgba(0, 0, 0, 0.6);
+        @include transition(0.3s ease-in-out);
+
+        &:before {
+            @include scale(1.3);
+            @include transition(0.4s ease-in-out);
+        }
+    }
+}

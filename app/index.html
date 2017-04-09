@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<!-- Open head page -->
+@@include('./layouts/Head.html', { "namePage":"Landing Page" })
+<!-- End head page -->
+<body>
+    <div class="wrapper">
+    	<!-- Open sidebar mmenu -->
+        @@include('./layouts/HeaderMmenu.html')
+        <!-- End sidebar mmenu -->
+        <div class="wrapper-main">
+        	<!-- Open header pages -->
+            @@include('./layouts/Header.html')
+            <!-- End header pages -->
+            @@include('./includes/SecBanner.html')
+            @@include('./includes/Section2.html')
+            @@include('./includes/Section3.html')
+            @@include('./includes/Section4.html')
+            @@include('./includes/Section5.html')
+            @@include('./includes/FormRegister.html')
+            @@include('./includes/PopupRegister.html')
+ 			<!-- Open footer pages -->
+            @@include('./layouts/Footer.html')
+            <!-- End footer pages -->
+        </div>
+    </div>
+    <!-- Open content bottom pages -->
+    @@include('./layouts/EndPage.html')
+    <!-- End content bottom pages -->
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿@import "../helpers/_mixins.scss";
+@import "../helpers/_variables.scss";
+
+.popup-wrap {
+    max-width: 620px;
+    padding: 20px;
+    background-color: #fff;
+    margin: 10px auto;
+    max-height: 100%;
+    position: relative;
+    border-radius: 6px;
+
+    .popup-content {
+        text-align: center;
+        width: 100%;
+
+        h2 {
+            font-size: 28px;
+            color: $color-blue;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight:normal;
+            margin-bottom:10px;
+            display:block;
+            b {
+                font-size:24px;
+                color:red;
+            }
+        }
+        ul {
+            text-align:left;
+            display:block;
+            margin-top:20px;
+            margin-bottom:10px;
+            li {
+                padding-left:15px;
+                position:relative;
+                display:block;
+                font-size:18px;
+                margin-bottom:10px;
+                a {
+                    color:$color-blue;
+                    font-size:18px;
+                }
+                &:before {
+                    content:"";
+                    width:6px;
+                    height:6px;
+                    border-radius:3px;
+                    background-color:$color-blue;
+                    position:absolute;
+                    top:8px;
+                    left:0px;
+                }
+            }
+        }
+    }
+
+    button.mfp-close {
+        top: -30px;
+        right: -30px;
+        width: 44px;
+        height: 44px;
+        border: 2px solid $color-blue;
+        border-radius: 22px;
+        background-color: $color-blue;
+        color: #fff;
+        opacity: 1;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            border-color: $color-blue;
+            background-color: $color-blue;
+        }
+    }
+}

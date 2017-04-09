@@ -1,0 +1,117 @@
+﻿@import "../helpers/_mixins.scss";
+@import "../helpers/_variables.scss";
+
+.owlFull {
+    float: left;
+    width: 100%;
+
+    &:hover .owl-prev, &:hover .owl-next {
+        opacity: 1;
+    }
+
+    .owl-item img {
+        max-width: 100%;
+    }
+
+    .owl-controls .owl-buttons {
+        position: absolute;
+        top: calc(50% - 24px);
+        height: 0;
+        width: 100%;
+    }
+
+    .owl-prev, .owl-next {
+        position: absolute;
+        margin: 0;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.3);
+        width: 48px;
+        height: 52px;
+        padding: 2px 0 0;
+        line-height: 48px;
+        text-align: center;
+        font-size: 38px;
+        color: #fff;
+        transition: all .5s ease;
+        opacity: 0;
+
+        &:hover {
+            background: rgba(0,0,0,0.6);
+        }
+    }
+
+    .owl-prev {
+        left: 10px;
+    }
+
+    .owl-next {
+        right: 10px;
+    }
+
+    .item-owlFull img {
+        width: 100%;
+    }
+
+    .owl-controls {
+        margin-top: 0;
+
+        .owl-page {
+            margin-top: 0;
+
+            &.active, &:hover {
+                span {
+                    background: $slider-paganition;
+                }
+            }
+
+            span {
+                margin: 0 8px 0 0;
+                background: #fff;
+                opacity: 1;
+                width: 14px;
+                height: 14px;
+                @include border-radius(7px);
+                border: 1px solid $slider-paganition;
+            }
+        }
+    }
+
+    .owl-pagination {
+        text-align: center;
+        bottom: 10px;
+        position: absolute;
+        width: 100%;
+    }
+
+    i.fa {
+        padding-right: 0;
+    }
+
+    .owl-caption {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        float:left;
+        width:50%;
+
+        h3 {
+            margin-top: 100px;
+            margin-bottom: 15px;
+
+            a {
+                color: #fff;
+            }
+        }
+
+        span {
+            color: #fff;
+            float: left;
+            display: block;
+        }
+        .btn {
+            float:left;
+            margin-top:10px;
+            clear:both;
+        }
+    }
+}

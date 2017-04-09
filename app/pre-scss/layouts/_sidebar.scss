@@ -1,0 +1,74 @@
+﻿@import "../helpers/_variables.scss";
+@import "../helpers/_mixins.scss";
+
+
+/*Open Header mobie*/
+#header-sidebar {
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    background: $color-primary;
+    border-bottom: 1px solid $color-primary;
+    z-index: 999999;
+}
+
+.left-h-sidebar {
+    width: 60px;
+    height: 50px;
+    float: left;
+    position: relative;
+    text-align: center;
+
+    a {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+
+        span {
+            color: #fff;
+            line-height: 50px;
+            font-size: 42px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.right-h-sidebar {
+    width: calc(100% - 60px);
+    float: left;
+    padding-right: 60px;
+
+    .logo-mobie {
+        line-height: 39px;
+        display: block;
+        text-align: center;
+        height: 50px;
+        padding: 5px;
+
+        a {
+            display: block;
+            height: 100%;
+
+            img {
+                max-width: 100%;
+                vertical-align: middle;
+                max-height: 100%;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+@include mq(max-sm) {
+    #wrapper-main {
+        padding-top: 50px;
+    }
+}

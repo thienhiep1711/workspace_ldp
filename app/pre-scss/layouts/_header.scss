@@ -1,0 +1,130 @@
+﻿@import "../helpers/_mixins.scss";
+@import "../helpers/_variables.scss";
+
+#header-main {
+    float: left;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: $color-blue;
+    border-bottom: 2px solid $color-blue;
+    transition:0.3s ease-in-out;
+    &.active {
+         transition:0.3s ease-in-out;
+    }
+}
+
+
+.logo {
+    width: 240px;
+    float: left;
+    padding: 15px 0;
+    img {
+        max-width: 100%;
+    }
+}
+
+.head-phone {
+    font-size: 16px;
+    color: #3c0e33;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    float: right;
+    margin: 17px 0;
+
+    &:hover {
+        color: #fff;
+        background-color: $color-pink;
+    }
+}
+
+#mainMenu {
+    float: left;
+    display: inline-block;
+    text-align:center;
+    width:calc(100% - 431px);
+    height:75px;
+    > ul {
+       display:inline-block;
+       margin:0 auto;
+        text-align: left;
+
+        > li {
+            display: block;
+            float: left;
+
+            > a {
+                display: block;
+                color: #333333;
+                font-size: 15px;
+                padding: 25px 36px 24px 36px;
+                float: left;
+                text-transform: uppercase;
+                position: relative;
+                border-bottom: 5px solid transparent;
+                 transition:0.3s ease-in-out;
+
+                &:before {
+                    width: 1px;
+                    content: "";
+                    height: 42px;
+                    background-color: #d7d7d7;
+                    position: absolute;
+                    right: 0;
+                    top: calc(50% - 21px);
+                }
+            }
+
+            &:first-child {
+                > a {
+                    &:after {
+                        width: 1px;
+                        content: "";
+                        height: 42px;
+                        background-color: #d7d7d7;
+                        position: absolute;
+                        left: 0;
+                        top: calc(50% - 21px);
+                    }
+                }
+            }
+
+            &.active {
+                > a {
+                    color: #fff;
+                    border-bottom: 5px solid $color-blue;
+                }
+            }
+
+            &:hover {
+                 transition:0.3s ease-in-out;
+                > a {
+                    color: #fff;
+                    border-bottom: 5px solid $color-blue;
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    padding-top: 87px;
+}
+
+@include mq(max-sm) {
+    .wrapper {
+        padding-top: 0px;
+    }
+    .wrapper-main {
+        padding-top:50px;
+    }
+}
+
+@include mq(max-sm) {
+    #header-main {
+        display: none;
+    }
+}

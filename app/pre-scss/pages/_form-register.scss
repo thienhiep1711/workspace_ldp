@@ -1,0 +1,131 @@
+@import "../helpers/_mixins.scss";
+@import "../helpers/_variables.scss";
+
+.form-register {
+    clear: both;
+    overflow: hidden;
+    width: 70%;
+    margin: 40px auto;
+    padding: 30px;
+    text-align:center;
+    box-shadow: -1px 1px 10px #cbcbcb;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 6px;
+
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        color: $color-pink;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 180px;
+            height: 1px;
+            background-color: transparent;
+            border-bottom: 2px dashed $color-pink;
+            position: absolute;
+            left: calc(50% - 90px);
+            bottom: -10px;
+        }
+    }
+
+    .frm-body {
+        float: left;
+        margin-top: 20px;
+        display: block;
+
+        label {
+            font-size: 18px;
+            color: $color-blue;
+            text-align:left;
+            float: left;
+        }
+
+        .ipt-text {
+            border: 0;
+            outline: none;
+            border-bottom: 1px solid #f2eff1;
+            text-indent: 5px;
+            float: right;
+            font-size: 18px;
+            background-color: transparent;
+        }
+
+        .form-group {
+            float: left;
+            width: calc(50% - 20px);
+            margin-top: 5px;
+
+            &:nth-child(1) {
+                .ipt-text {
+                    width: calc(100% - 82px);
+                }
+
+                margin-right: 20px;
+            }
+
+            &:nth-child(2) {
+                .ipt-text {
+                    width: calc(100% - 50px );
+                }
+
+                margin-left: 20px;
+            }
+
+            &:nth-child(3) {
+                .ipt-text {
+                    width: calc(100% - 110px);
+                }
+
+                margin-right: 20px;
+            }
+
+            &:nth-child(4) {
+                .ipt-text {
+                    width: calc(100%);
+                }
+
+                margin-left: 20px;
+            }
+
+            &:nth-child(5) {
+                width: 100%;
+            }
+
+            &:nth-child(6) {
+                width: 100%;
+            }
+
+            span {
+                font-size: 24px;
+                color: $color-blue;
+                line-height: 1.4em;
+                display: block;
+                width: 100%;
+
+                i {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .bt-button {
+            display: inline-block;
+            padding: 8px 18px;
+            color: #fff;
+            font-size: 22px;
+            margin-top: 15px;
+            background-color: $color-blue;
+            border-radius: 6px;
+            clear: both;
+            border: 0;
+
+            &:hover {
+                background-color: $color-pink;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+﻿@import "../helpers/_variables.scss";
+@import "../helpers/_mixins.scss";
+
+footer {
+   float:left;
+   width:100%;
+   background-color:$color-blue;
+   padding:15px 0;
+   span {
+       color:#fff;
+       font-size:18px;
+   }
+   a {
+         color:#fff;
+       font-size:18px;
+       text-decoration:none;
+   }
+
+}

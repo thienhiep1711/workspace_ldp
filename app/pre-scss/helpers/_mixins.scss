@@ -1,0 +1,235 @@
+﻿
+@mixin border-radius ($radius) {
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin opacity ($opacity) {
+    -ms-opacity: $opacity;
+    opacity: $opacity;
+}
+
+@mixin box-shadow ($box-shadow) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    -ms-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-property($property...) {
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    -webkit-transition-property: $property;
+    -ms-transition-property: $property;
+    transition-property: $property;
+}
+
+@mixin transition-duration($duration...) {
+    -moz-transition-property: $duration;
+    -o-transition-property: $duration;
+    -webkit-transition-property: $duration;
+    -ms-transition-property: $duration;
+    transition-property: $duration;
+}
+
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function: $timing;
+    -o-transition-timing-function: $timing;
+    -ms-transition-timing-function: $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+}
+
+@mixin transition-delay($delay...) {
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    -ms-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin translateY ($y) {
+    @include transform(translateY($y));
+}
+
+@mixin translateX ($x) {
+    @include transform(translateX($x));
+}
+
+
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin font( $name, $src ) {
+    @font-face {
+        font-family: $name;
+        /*src: url('../fonts/' + $src + '.eot');
+    src: url('../fonts/' + $src + '.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/' + $src + '.woff') format('woff');*/
+        src: url('../fonts/' + $src + '.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+
+@mixin button-config ( $padding-botton , $size-botton  ){
+    font-size:$size-botton;
+    padding:$padding-botton;
+}
+
+@mixin size($value) {
+  $width: nth($value, 1);
+  $height: $width;
+
+  @if length($value) > 1 {
+    $height: nth($value, 2);
+  }
+
+  @if is-size($height) {
+    height: $height;
+  } @else {
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin.";
+  }
+
+  @if is-size($width) {
+    width: $width;
+  } @else {
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin.";
+  }
+}
+
+
+@mixin keyframes($name) {
+  @-o-keyframes $name { @content };
+  @-moz-keyframes $name { @content };
+  @-webkit-keyframes $name { @content }; 
+  @-keyframes $name { @content };
+}
+
+@mixin animation-name($name...) {
+  -o-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-timing-function($timing...) {
+  -o-animation-timing-function: $timing;
+  -moz-animation-timing-function: $timing;
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+@mixin animation-iteration-count($count...) {
+  -o-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-direction($direction...) {
+  -o-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill...) {
+  -o-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+@mixin animation-play-state($state...) {
+  -o-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+@mixin animation($animation...) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+
+@mixin mq($breakpoint) {
+
+  $mq-xs: "(max-width: 767px)";
+  $mq-sm: "(min-width: 768px) and (max-width: 991px)";
+  $mq-md: "(min-width: 992px) and (max-width: 1199px)";
+  $mq-lg: "(min-width: 1200px)";
+  $mq-max-md: "(max-width: 1024px)";
+  $mq-max-sm: "(max-width: 800px)";
+  $mq-max-xs: "(max-width: 480px)";
+
+  @if $breakpoint == xs {
+    @media #{$mq-xs} { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media #{$mq-sm} { @content; }
+  }
+  @else if $breakpoint == md {
+    @media #{$mq-md}  { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media #{$mq-lg}  { @content; }
+  }
+  @else if $breakpoint == max-md {
+    @media #{$mq-max-md}  { @content; }
+  }
+   @else if $breakpoint == max-sm {
+    @media #{$mq-max-sm}  { @content; }
+  }
+    @else if $breakpoint == max-xs {
+    @media #{$mq-max-xs}  { @content; }
+  }
+}
