@@ -2,14 +2,105 @@
 @import "../helpers/_variables.scss";
 
 .sec-wrap {
-    min-height:100vh;
-    float:left;
-    width:100%;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    min-height: 100vh;
+
+    .sec-title {
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 60px 0 40px 0;
+        font-weight: normal;
+
+
+        h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $text-color-primary;
+        }
+
+        &.title-line {
+            padding-bottom: 20px;
+            position: relative;
+
+            &:before {
+                content: "";
+                left: calc(50% - 45px);
+                position: absolute;
+                width: 90px;
+                height: 1px;
+                background-color: #959595;
+                bottom: 0;
+            }
+        }
+    }
+
+    &.bgr-while {
+        background-color: #fff;
+    }
+
+    &.bgr-gray {
+        background-color: #e1e1e1;
+    }
+
+    &.bgr-images {
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .sec-title {
+            h2 {
+                color: #fff;
+            }
+        }
+    }
 }
-.sec-title {
-    float:left;
-    width:100%;
-    text-align:center;
-    padding:30px 0;
-    font-weight:normal;
+
+.bg-images {
+    position: relative;
+}
+
+.container-wrap {
+    max-width: 1000px;
+    margin: auto auto;
+}
+
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 1440px) {
+
+}
+
+@media only screen and (max-width: 1366px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .container-wrap  {
+        width:100%;
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+}
+
+@include mq(max-sm) {
+
+}
+
+@include mq(max-xs) {
+    .sec-wrap {
+        .sec-title {
+            padding: 40px 0 30px 0;
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    }
 }

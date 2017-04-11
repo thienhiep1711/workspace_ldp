@@ -16,7 +16,7 @@
 
         h2 {
             font-size: 28px;
-            color: $color-blue;
+            color: $color-primary;
             margin-bottom: 10px;
         }
 
@@ -43,7 +43,7 @@
                 font-size:18px;
                 margin-bottom:10px;
                 a {
-                    color:$color-blue;
+                    color:$color-primary;
                     font-size:18px;
                 }
                 &:before {
@@ -51,7 +51,7 @@
                     width:6px;
                     height:6px;
                     border-radius:3px;
-                    background-color:$color-blue;
+                    background-color:$color-primary;
                     position:absolute;
                     top:8px;
                     left:0px;
@@ -65,9 +65,9 @@
         right: -30px;
         width: 44px;
         height: 44px;
-        border: 2px solid $color-blue;
+        border: 2px solid $color-primary;
         border-radius: 22px;
-        background-color: $color-blue;
+        background-color: $color-primary;
         color: #fff;
         opacity: 1;
         font-size: 36px;
@@ -76,8 +76,8 @@
         transition: 0.3s ease-in-out;
 
         &:hover {
-            border-color: $color-blue;
-            background-color: $color-blue;
+            border-color: $color-primary;
+            background-color: $color-primary;
         }
     }
 }

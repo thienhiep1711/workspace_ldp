@@ -7,7 +7,7 @@
 
     h3 {
         font-size: 24px;
-        color: $primary-color-text;
+        color: $text-color-primary;
         font-weight: normal;
         margin-bottom:15px;
     }
@@ -33,7 +33,7 @@
 
     label {
         font-weight: normal;
-        color: $primary-color-text;
+        color: $text-color-primary;
         line-height: 28px;
 
         strong {
@@ -54,7 +54,7 @@
         height: 38px;
         @include border-radius(0);
         @include box-shadow(none);
-        border: 1px solid $primary-color-border;
+        border: 1px solid $border-color-primary;
        &.ipt-area  {
            height:auto !important;
        }
