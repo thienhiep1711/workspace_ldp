@@ -4,36 +4,36 @@
 .sec-wrap {
     float: left;
     width: 100%;
-    padding-bottom: 50px;
-    min-height: 100vh;
-
-    .sec-title {
-        float: left;
-        width: 100%;
+    padding-bottom: 30px;
+    padding-top:30px;
+    /*min-height: 100vh;*/
+     .sec-title {
         text-align: center;
-        padding: 60px 0 40px 0;
-        font-weight: normal;
-
+        width: 100%;
+        float:left;
+        padding:10px 0 30px 0;
 
         h2 {
-            font-size: 32px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: $text-color-primary;
+            font-size: 72px;
+            color: $color-blue;
+            float: left;
+            padding-bottom:10px;
+            font-family:htl;
         }
 
-        &.title-line {
-            padding-bottom: 20px;
-            position: relative;
+        span {
+            font-size: 18px;
+            color: $text-color-primary;
+            clear:both;
+            display:block;
 
-            &:before {
-                content: "";
-                left: calc(50% - 45px);
-                position: absolute;
-                width: 90px;
-                height: 1px;
-                background-color: #959595;
-                bottom: 0;
+            b {
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+
+            strong {
+                font-weight: normal;
             }
         }
     }
@@ -57,10 +57,38 @@
             }
         }
     }
+    .sec-contnet {
+        float:left;
+        width:100%;
+    }
 }
 
 .bg-images {
     position: relative;
+}
+
+.line {
+    width: 120px;
+    height: 2px;
+    background-color: $color-primary;
+    margin: 20px auto 0px;
+    clear: both;
+
+    &.line-left {
+        float: left;
+    }
+}
+
+
+.sec-banner {
+    height: auto;
+    margin-bottom: 0;
+    min-height: 0;
+    padding: 0;
+}
+
+.banner-mobie {
+    display:none;
 }
 
 .container-wrap {
@@ -68,38 +96,59 @@
     margin: auto auto;
 }
 
-@media only screen and (max-width: 1600px) {
+.video {
+    height: 340px;
+    width:100%;
+    float:left;
+}
 
+@media only screen and (max-width: 1600px) {
 }
 
 @media only screen and (max-width: 1440px) {
-
 }
 
 @media only screen and (max-width: 1366px) {
-
 }
 
 @media only screen and (max-width: 1024px) {
-    .container-wrap  {
-        width:100%;
-        padding-left:15px;
-        padding-right:15px;
+    .container-wrap {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
+    .video {
+        height: 300px;
+    }
 }
 
 @include mq(max-sm) {
-
+    .video {
+        height: 420px;
+    }
 }
 
 @include mq(max-xs) {
+    .video {
+        height: 240px;
+        margin-bottom:30px;
+    }
+    .banner-desktop {
+        display:none;
+    }
+    .banner-mobie {
+        display:block;
+    }
     .sec-wrap {
         .sec-title {
-            padding: 40px 0 30px 0;
+            padding: 0px 0 30px 0;
 
             h2 {
-                font-size: 24px;
+                font-size: 42px;
+            }
+            span {
+                font-size:15px;
             }
         }
     }

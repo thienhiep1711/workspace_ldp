@@ -1,0 +1,64 @@
+﻿@import "../helpers/_variables.scss";
+@import "../helpers/_mixins.scss";
+
+.btf {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+}
+
+.bt-1 {
+    border: 1px solid #fff;
+    padding: 0 40px;
+    border-radius: 4px;
+
+    &:hover,&:focus {
+        border: 1px solid $color-primary;
+        background-color: $color-primary;
+        color: #fff;
+    }
+}
+
+.bt-block {
+    width: 100%;
+    float: left;
+}
+
+.bt-primary {
+    background-color: #c84444;
+    border-radius: 4px;
+    border: 1px solid #c84444;
+    padding: 0 20px;
+    margin: 0px 2px;
+    box-shadow: 0 4px 0px #982021;
+
+
+     &:hover,&:focus  {
+        color: #fff;
+    }
+}
+
+.bt-blue {
+    background-color: $color-blue;
+    border-radius: 4px;
+    border: 1px solid $color-blue;
+    padding: 0 20px;
+    margin: 0px 2px;
+    box-shadow: 0 4px 0px #243269;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+@include mq(max-xs) {
+    .btf {
+        line-height:36px !important;
+        font-size:14px !important;
+    }
+}

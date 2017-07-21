@@ -4,10 +4,8 @@ var merge = require('merge-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var csswring = require("csswring");
-var autoprefixer = require('autoprefixer');
-var cssnano = require('gulp-cssnano');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 var imagemin = require('gulp-imagemin');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -20,23 +18,8 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('styles', function () {
-    var processors = [
-        autoprefixer,
-        cssnano
-        //csswring
-    ];
-    var bootstraps = gulp.src('app/pre-scss/bootstrap.scss')
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(sass())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/css'));
-
     var main = gulp.src('app/pre-scss/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
@@ -44,14 +27,17 @@ gulp.task('styles', function () {
             }
         }))
         .pipe(sass())
-        .pipe(postcss(processors))
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(autoprefixer('last 2 versions'))
         .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write('../maps/css/'))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({ stream: true }));
 
 
-    return merge(bootstraps, main);
+    return merge(main);
 
 });
 
@@ -64,8 +50,9 @@ gulp.task('images', function () {
 gulp.task('browserSync', function () {
     browserSync.init({
         server: {
-            baseDir: 'dist'
+            baseDir: 'dist',
         },
+        port:8080,
         ghostMode: {
             scroll: true
         }
@@ -88,6 +75,7 @@ gulp.task('scripts', function () {
         .pipe(browserSync.reload({ stream: true }));
 
     var plugin = gulp.src('app/pre-js/include/plugin/*.js')
+         .pipe(sourcemaps.init({ loadMaps: true }))
        .pipe(plumber({
            errorHandler: function (error) {
                console.log(error.message);
@@ -98,20 +86,23 @@ gulp.task('scripts', function () {
        .pipe(gulp.dest('dist/js/'))
        .pipe(rename({ suffix: '.min' }))
        .pipe(uglify())
+        .pipe(sourcemaps.write('../maps/js'))
        .pipe(gulp.dest('dist/js/'))
        .pipe(browserSync.reload({ stream: true }));
 
     var customs = gulp.src('app/pre-js/include/custom/*.js')
-       .pipe(plumber({
-           errorHandler: function (error) {
-               console.log(error.message);
-               this.emit('end');
-           }
-       }))
+           .pipe(sourcemaps.init({ loadMaps: true }))
+           .pipe(plumber({
+               errorHandler: function (error) {
+                   console.log(error.message);
+                   this.emit('end');
+               }
+           }))
        .pipe(concat('customs.js'))
        .pipe(gulp.dest('dist/js/'))
        .pipe(rename({ suffix: '.min' }))
        .pipe(uglify())
+       .pipe(sourcemaps.write('../maps/js'))
        .pipe(gulp.dest('dist/js/'))
        .pipe(browserSync.reload({ stream: true }));
 
@@ -119,10 +110,10 @@ gulp.task('scripts', function () {
 
 });
 
-gulp.task('pages', function() {
+gulp.task('pages', function () {
     gulp.src('app/*.html')
         .pipe(plumber({
-            errorHandler: function(error) {
+            errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
             }
@@ -141,8 +132,9 @@ gulp.task('fonts', function () {
 
 gulp.task('watch', ['browserSync'], function () {
     gulp.watch('app/pre-scss/**/*.scss', ['styles']);
-    gulp.watch('dist/*.html', ['bs-reload']);
-    gulp.watch('app/**/*.html', ['pages']);
-    gulp.watch('app/img/*', ['images']);
     gulp.watch('app/pre-js/include/**/*.js', ['scripts']);
+    gulp.watch('app/**/*.html', ['pages']);
+    gulp.watch('dist/*.html', ['bs-reload']);
+    gulp.watch('app/img/*', ['images']);
+
 });

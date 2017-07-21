@@ -2,18 +2,67 @@
 @import "../helpers/_mixins.scss";
 
 footer {
-   float:left;
-   width:100%;
-   background-color:$color-primary;
-   padding:15px 0;
-   span {
-       color:#fff;
-       font-size:18px;
-   }
-   a {
-         color:#fff;
-       font-size:18px;
-       text-decoration:none;
-   }
+    float: left;
+    width: 100%;
+    background:$color-primary;
+    background-size: cover;
+    padding: 30px 0;
 
+    .logo-foo {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+
+        h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-top: 30px;
+        }
+    }
+
+    span {
+        color: #fff;
+        font-size: 14px;
+        padding:3px 0;
+        display:block;
+    }
+
+  
+}
+.list-contact {
+    margin-top:20px;
+    float:left;
+    width:100%;
+      ul {
+        margin-bottom: 15px;
+        width: calc(50% - 30px);
+        margin-right: 20px;
+        float: left;
+        min-height: 90px;
+
+        li {
+            strong {
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: normal;
+                margin-top: 20px;
+                margin-bottom:5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .list-contact ul {
+        min-height:110px;
+    }
+}
+@include mq(max-xs) {
+    .list-contact {
+        ul {
+            width:100%;
+            margin-right:0;
+            min-height:0;
+        }
+    }
 }

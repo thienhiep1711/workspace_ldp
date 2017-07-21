@@ -7,8 +7,8 @@
     width: 100%;
     position: fixed;
     height: 50px;
-    background: $color-primary;
-    border-bottom: 1px solid $color-primary;
+    background: #fff;
+    box-shadow: 2px 2px 6px #ccc;
     z-index: 999999;
 }
 
@@ -29,9 +29,9 @@
         text-align: center;
 
         span {
-            color: #fff;
+            color: #4a4a4a;
             line-height: 50px;
-            font-size: 42px;
+            font-size: 40px;
         }
 
         &:focus {

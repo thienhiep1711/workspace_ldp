@@ -1,6 +1,36 @@
 ﻿@import "../helpers/_mixins.scss";
 @import "../helpers/_variables.scss";
 
+
+.navi-head {
+    background-color: $color-primary;
+    padding: 5px 0;
+    float: left;
+    width: 100%;
+
+    .phone-head {
+        float: left;
+
+        a {
+            padding: 2px 0;
+            display: inline-block;
+            color: #fff;
+        }
+    }
+
+    .social-head {
+        text-align: right;
+
+        a {
+            padding:2px 0;
+            display:inline-block;
+            color: #fff;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    }
+}
+
 #header-main {
     float: left;
     width: 100%;
@@ -11,59 +41,69 @@
     background-color: #fff;
     border-bottom: 2px solid $color-primary;
     transition: 0.3s ease-in-out;
-    border-top: 25px solid $color-primary;
+
 
     &.active {
-        border-top: 5px solid $color-primary;
         transition: 0.3s ease-in-out;
+        transform: translateY(-35px);
 
         .logo {
-            padding: 8px 0;
+            padding: 5px 0;
+
+            a {
+                img {
+                    max-height: 50px;
+                }
+            }
         }
 
-        .head-phone {
-            margin: 11px 0;
+        .btf {
+            margin-top: 7px;
         }
 
         #mainMenu {
-            height: 59px;
-
             > ul {
+                margin: 13px auto 6px;
+
                 > li {
                     a {
-                        padding: 20px 14px 13px 14px;
                     }
                 }
             }
         }
     }
+
+    .btf {
+        margin-top: 25px;
+    }
+}
+
+.button-right {
+    width: 154px;
+    float: right;
 }
 
 .logo {
-    width: 240px;
+    width: 273px;
     float: left;
     padding: 15px 0;
 
-    img {
-        max-width: 100%;
+    a {
+        display: inline-block;
+        float: left;
+
+        img {
+            display: inline-block;
+            float: left;
+            transition:0.3s ease-in-out;
+        }
+
+        &:first-child {
+            margin-right: 20px;
+        }
     }
 }
 
-.head-phone {
-    font-size: 14px;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 8px;
-    background-color: $color-primary;
-    float: right;
-    margin: 17px 0;
-    display: inline-block;
-
-    &:hover {
-        color: #fff;
-        background-color: $color-primary;
-    }
-}
 
 .header-wrap {
     max-width: 1640px;
@@ -74,28 +114,29 @@
     float: left;
     display: inline-block;
     text-align: center;
-    width: calc(100% - 445px);
-    height: 75px;
+    width: calc(100% - 428px);
 
     > ul {
         display: inline-block;
-        margin: 0 auto;
+        margin: 31px auto 25px;
         text-align: left;
 
         > li {
             display: block;
             float: left;
+            margin: 0 5px;
 
             > a {
                 display: block;
-                color: #333333;
+                color: #4a4a4a;
                 font-size: 15px;
-                padding: 30px 14px 19px 14px;
+                padding: 6px 22px;
                 float: left;
                 text-transform: uppercase;
                 position: relative;
-                border-bottom: 5px solid transparent;
                 transition: 0.3s ease-in-out;
+                border: 1px solid #fff;
+                border-radius: 18px;
             }
 
             &:first-child {
@@ -103,8 +144,7 @@
 
             &.active {
                 > a {
-                    color: $color-primary;
-                    border-bottom: 5px solid $color-primary;
+                    border-color: #a5a5a5;
                 }
             }
 
@@ -112,8 +152,7 @@
                 transition: 0.3s ease-in-out;
 
                 > a {
-                    color: $color-primary;
-                    border-bottom: 5px solid $color-primary;
+                    border-color: #a5a5a5;
                 }
             }
         }
@@ -121,82 +160,13 @@
 }
 
 .wrapper {
-    padding-top: 101px;
+    padding-top: 134px;
 }
 
-@media only screen and (max-width: 1600px) {
-    .header-wrap {
-        width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
 
-    #mainMenu {
-        ul {
-            li {
-                a {
-                    padding: 30px 10px 19px 10px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1366px) {
-
-    #mainMenu {
-        width: calc(100% - 416px);
-
-        ul {
-            li {
-                a {
-                    padding: 32px 5px 20px 5px;
-                    font-size: 13px;
-                }
-            }
-        }
-    }
-
-    #header-main.active #mainMenu > ul > li a {
-        padding: 23px 14px 13px 14px;
-    }
-}
 
 @media only screen and (max-width: 1024px) {
-    .head-phone {
-        display: none;
-    }
-
-    .logo {
-        width: 160px;
-        overflow: hidden;
-        padding: 23px 0;
-    }
-
-    #mainMenu {
-        width: calc(100% - 160px);
-        float: right;
-
-        ul {
-            display: block;
-            float: right;
-
-            li {
-                a {
-                    font-size: 14px;
-                    padding: 33px 8px 20px 8px;
-                }
-            }
-        }
-
-        
-    }
-    #header-main.active #mainMenu > ul > li a {
-            padding: 23px 8px 13px 8px;
-        }
-    #header-main.active .logo {
-        padding:15px 0;
-    }
+    
 }
 
 @include mq(max-sm) {

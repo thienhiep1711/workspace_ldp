@@ -54,10 +54,10 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
     color: $text-color-primary;
-    margin:0;
-    padding:0;
-    display:block;
-    width:100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
 }
 
 .tbw-5, .tbw-10, .tbw-15, .tbw-20, .tbw-25, .tbw-30, .tbw-35, .tbw-40, .tbw-45, .tbw-50, .tbw-55, .tbw-60, .tbw-65, .tbw-70, .tbw-75, .tbw-80, .tbw-85, .tbw-90, .tbw-95, .tbw-100 {
@@ -228,23 +228,24 @@ i.fa {
     bottom: 100px;
     background: $color-primary;
     color: #fff;
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     text-align: center;
-    line-height: 30px;
+    line-height: 38px;
     text-decoration: none;
-    @include opacity(0.8);
+    opacity: 0.8;
     display: none;
-    @include border-radius(3px);
-    z-index:99999;
+    border-radius: 19px;
+    z-index: 99999;
+    box-shadow: 0px 0px 8px #8e8e8e;
+
     span {
         display: block;
-        font-size: 2em;
+        font-size: 22px;
         text-align: center;
     }
 
     &:hover {
-        @include opacity(0.8);
+      opacity:1;
     }
 }
-

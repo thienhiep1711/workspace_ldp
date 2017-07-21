@@ -6,7 +6,7 @@
     bottom:0;
     left:0;
     right:0;
-    padding:10px;
+    padding:7px;
     text-align:center;
     background-color:rgba(0,0,0,0.7);
     z-index:9998;
@@ -25,16 +25,20 @@
             position:relative;
             top:1px;
         }
+        &:first-child {
+            margin-right:5px;
+        }
+        &:last-child {
+            margin-left:5px;
+        }
     }
     .bt-sticky {
         background-color:$color-primary;
         border-radius:6px;
-        margin-right:5px;
     }
     .bt-phone {
         background-color:$color-primary;
         border-radius:6px;
-        margin-left:5px;
     }
 }
 
@@ -45,4 +49,18 @@
     footer {
         padding-bottom:70px;
     }
+}
+@include mq(max-xs) {
+     .navi-sticky {
+         a {
+             width:calc(50% - 10px);
+         }
+     }
+}
+@media only screen and (max-width: 320px){
+    .navi-sticky {
+         a {
+             padding:0 10px;
+         }
+     }
 }

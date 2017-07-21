@@ -53,6 +53,18 @@ function cusScrollTop () {
 };
 cusScrollTop();
 
+
+$('.item-href').on('click', function (event) {
+    var target = $($(this).attr('href'));
+    if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top - 70
+        }, 1000);
+    }
+});
+
+
 function ResizeWindows() {
     var Yheight = $(window).height();
     var Xwidth = $(window).width();

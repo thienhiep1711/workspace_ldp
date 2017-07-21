@@ -3,6 +3,7 @@
 @import "base/_reset.scss";
 
 /*---Components---*/
+@import "components/_button.scss";
 @import "components/_check-box.scss";
 @import "components/_radio-button.scss";
 @import "components/_pagination.scss";
@@ -10,6 +11,7 @@
 @import "components/_live-support.scss";
 @import "components/_slider-full.scss";
 @import "components/_popup-before-page.scss";
+@import "components/_list-pro-down.scss";
 
 /*---Layout---*/
 @import "layouts/_layout.scss";
@@ -19,12 +21,12 @@
 
 
 /*---Modules---*/
-@import "modules/_list-news.scss";
-@import "modules/_detail-news.scss";
-@import "modules/_list-product.scss";
-@import "modules/_detail-product.scss";
-@import "modules/_detail-gallery.scss";
-@import "modules/_list-media.scss";
+/*@import "modules/_list-news.scss";*/
+/*@import "modules/_detail-news.scss";*/
+/*@import "modules/_list-product.scss";*/
+/*@import "modules/_detail-product.scss";*/
+/*@import "modules/_detail-gallery.scss";*/
+/*@import "modules/_list-media.scss";*/
 
 /*---Pages---*/
 @import "pages/_home.scss";
